@@ -11,6 +11,25 @@
       <h2> Efatha Goods Tracker</h2>
       <button id="themeToggle">🌓 Toggle Theme</button>
     </header>
+    <section class="summary">
+     <div><strong>Sales:</strong> <span id="totalSales">$0.00</span></div>
+     <div><strong>Purchases:</strong> <span id="totalPurchases">$0.00</span></div>
+     <div><strong>Expenses:</strong> <span id="totalExpenses">$0.00</span></div>
+     <div><strong>Profit:</strong> <span id="profit">$0.00</span></div>
+     <div><strong>Balance:</strong> <span id="balance">$0.00</span></div>
+    </section>
+    <form id="form">
+      <input type="text" id="desc" placeholder="Item description" required />
+      <input type="text" id="customer" placeholder="Customer (optional)" />
+      <input type="number" id="amount" placeholder="Amount" required />
+      <select id="type">
+       <option value="sale">Sale</option>
+       <option value="purchase">Purchase</option>
+       <option value="expense">Expense</option>
+      </select>
+    <button type="submit">Add Record</button>
+</form>
+
   </div>
 </body>
 </html>
