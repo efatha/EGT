@@ -29,3 +29,38 @@ function removeRecord(id) {
   records = records.filter(r => r.id !== id); // Remove selected record
   localStorage.setItem("goodsRecords", JSON.stringify(records)); // Update storage
 }
+function render() {
+  history.innerHTML = "";
+
+  const dateFilter = filterDate.value;
+  const filtered = dateFilter
+    ? records.filter(r => r.date === dateFilter)
+    : records;
+
+  let sales = 0, purchases = 0, expenses = 0;
+
+  filtered.forEach(rec => {
+    const li = document.createElement("li");
+    li.classList.add(rec.type);
+    li.innerHTML = `
+      [${rec.date}] ${rec.desc} (${rec.customer}): $${rec.amount.toFixed(2)}
+      <button class="delete-btn" onclick="removeRecord(${rec.id})">x</button>
+    `;
+    history.appendChild(li);
+
+    if (rec.type === "sale") sales += rec.amount;
+    if (rec.type === "purchase") purchases += rec.amount;
+    if (rec.type === "expense") expenses += rec.amount;
+  });
+
+  const calculatedProfit = sales - (purchases + expenses);
+  const balance = calculatedProfit;
+
+  document.getElementById("totalSales").textContent = `$${sales.toFixed(2)}`;
+  document.getElementById("totalPurchases").textContent = `$${purchases.toFixed(2)}`;
+  document.getElementById("totalExpenses").textContent = `$${expenses.toFixed(2)}`;
+  document.getElementById("profit").textContent = `$${calculatedProfit.toFixed(2)}`;
+  document.getElementById("balance").textContent = `$${balance.toFixed(2)}`;
+}
+
+render();
