@@ -22,3 +22,10 @@ form.addEventListener("submit", e => {
   render();
   form.reset();
 });
+// Removing a Record and Filtering Entries
+filterDate.addEventListener("change", render); // Trigger filtering when date changes
+
+function removeRecord(id) {
+  records = records.filter(r => r.id !== id); // Remove selected record
+  localStorage.setItem("goodsRecords", JSON.stringify(records)); // Update storage
+}
