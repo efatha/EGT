@@ -8,11 +8,12 @@
   --dark-text: #eee;
   --dark-container: #1f1f1f;
   --dark-history: #2c2c2c;
-
-  --sale-color: rgb(48, 94, 48);
-  --purchase-color: rgb(61, 61, 131);
-  --expense-color: rgb(116, 40, 40);
-  --delete-btn-bg: rgb(163, 77, 94);
+  
+ --sale-color: #5bba60;        /* Muted emerald green for income */
+  --purchase-color: #d19559;
+    /* Indigo for purchases, suggests trust & reliability */
+  --expense-color: #d30808;     /* Strong red for expenses */
+  --delete-btn-bg: #b33e3e;     /* Soft red for delete button to reduce harshness */
 }
 body {
   font-family: sans-serif;
