@@ -7,6 +7,7 @@ const history = document.getElementById("history");
 const filterDate = document.getElementById("filterDate");
 
 let records = JSON.parse(localStorage.getItem("goodsRecords")) || [];
+
 form.addEventListener("submit", e => {
   e.preventDefault();
   const record = {
@@ -22,13 +23,15 @@ form.addEventListener("submit", e => {
   render();
   form.reset();
 });
-// Removing a Record and Filtering Entries
-filterDate.addEventListener("change", render); // Trigger filtering when date changes
+
+filterDate.addEventListener("change", render);
 
 function removeRecord(id) {
-  records = records.filter(r => r.id !== id); // Remove selected record
-  localStorage.setItem("goodsRecords", JSON.stringify(records)); // Update storage
+  records = records.filter(r => r.id !== id);
+  localStorage.setItem("goodsRecords", JSON.stringify(records));
+  render();
 }
+
 function render() {
   history.innerHTML = "";
 
