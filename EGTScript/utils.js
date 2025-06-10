@@ -22,4 +22,10 @@ if (themeToggle) {
 
 // Here is the delete functionality enhance:
 // This will allow users to delete individual or all records from localStorage.
-
+const deleteBtn = document.getElementById("deleteBtn");
+if (deleteBtn) {
+  deleteBtn.addEventListener("click", () => {
+    // Deletion logic to be implemented
+    // Example: localStorage.removeItem("goodsRecords");
+  });
+}
