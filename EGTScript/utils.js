@@ -19,3 +19,7 @@ if (themeToggle) {
     document.body.classList.toggle("dark");
   });
 }
+
+// Here is the delete functionality enhance:
+// This will allow users to delete individual or all records from localStorage.
+
