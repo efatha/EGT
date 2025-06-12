@@ -15,5 +15,15 @@ function rotateTips() {
     index++;
   }, 7000);
 }
+function rotateTips() {
+  const tipBox = document.getElementById("marketingTip");
+  let index = 0;
+  function updateTip() {
+    tipBox.textContent = tips[index];
+    index = (index + 1) % tips.length;
+  }
+  updateTip(); // Show first tip immediately
+  setInterval(updateTip, 7000);
+}
 
 window.addEventListener("DOMContentLoaded", rotateTips);
