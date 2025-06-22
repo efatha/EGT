@@ -8,7 +8,7 @@ if (exportBtn) {
     const blob = new Blob(["Date,Description,Customer,Amount,Type\n" + csv], { type: "text/csv" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = "goods_records.csv";
+    a.download = "Report.csv";
     a.click();
   });
 }
